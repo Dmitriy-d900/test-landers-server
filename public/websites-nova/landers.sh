@@ -7,7 +7,7 @@ if [ "$#" -lt 2 ]; then
 fi
 
 YEAR="$1"
-NEW_REPO_URL=git@github.com:Dmitriy-d900/test-landers-server.git
+NEW_REPO_URL=git@github-work:Dmitriy-d900/test-nova-black.git
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"     # Получение директории скрипта
 SOURCE_DIR="$SCRIPT_DIR/../landers"            # Директория с исходными папками
 DEST_DIR="$SCRIPT_DIR/$YEAR"                   # Директория назначения
