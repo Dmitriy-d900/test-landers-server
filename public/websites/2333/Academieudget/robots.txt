@@ -1,0 +1,7 @@
+# robots.txt
+
+User-agent: *
+Disallow:
+
+# Указываем расположение карты сайта
+Sitemap: https://www.Academieudget.com/sitemap.xml

@@ -1,0 +1,91 @@
+.check__iban{
+  display: block
+}
+
+.check {
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+  box-shadow: 0 0 10px 0 #000;
+  max-width: 100%;
+  font-family: Arial, Helvetica, sans-serif !important;
+  background-color: #fff
+}
+
+.check__wrapper {
+  padding: .5rem
+}
+
+.check__iban {
+  margin-bottom: 1rem;
+  font-weight: 500
+}
+
+.check__top-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start
+}
+
+.check__top-col-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 4rem
+}
+
+.check__top-col-1-row {
+  display: flex;
+  flex-direction: column
+}
+
+.check__top-col-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem
+}
+
+.check__bot-grid {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr 1fr 1fr
+}
+
+.check__bot-grid-col {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #000
+}
+
+.check__bot-grid-col-title {
+  font-weight: 500;
+  background-color: rgba(128, 128, 128, .39);
+  border-right: 1px solid #000;
+  padding-left: 2px
+}
+
+.check__thanks {
+  text-align: right;
+  display: block;
+  margin: .5rem 2rem
+}
+
+@media (max-width:1023px) {
+  .check {
+    font-size: 1.4rem
+  }
+}
+
+@media (max-width:575px) {
+  .check {
+    font-size: 1.2rem
+  }
+  .check__bot-grid {
+    display: grid;
+    grid-template-columns: 1fr
+  }
+}
+
+@media (max-width:359px) {
+  .check {
+    font-size: 1rem
+  }
+}
