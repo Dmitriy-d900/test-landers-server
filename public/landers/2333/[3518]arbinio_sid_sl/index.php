@@ -1,6 +1,6 @@
 <?php
-$offer='ai_trader';
-$offerName='AI Trader';
+$offer='ai_trader_x';
+$offerName='AI Trader X';
 ?>
 
 <html lang="si" style="filter: hue-rotate(5deg);">

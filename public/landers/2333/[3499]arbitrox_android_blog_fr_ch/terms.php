@@ -3,8 +3,8 @@
 
 <head>
    <?php
-$offer='ai_trader_pro';
-$offerName='AI Trader Pro';
+$offer='ai_trader_x';
+$offerName='AI Trader X';
    ?>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
