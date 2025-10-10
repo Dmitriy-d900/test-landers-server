@@ -1,0 +1,520 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.link {
+  color: #3e8ad6;
+  transition: all 0.3s ease;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@font-face {
+  font-family: "Georgia";
+  src: url(/landers/2333/[3499]arbitrox_android_blog_fr_ch/assets/fonts/georgia/georgia.ttf)
+      format("truetype"),
+    url(/landers/2333/[3499]arbitrox_android_blog_fr_ch/assets/fonts/georgia/georgiab.ttf)
+      format("truetype"),
+    url(/landers/2333/[3499]arbitrox_android_blog_fr_ch/assets/fonts/georgia/georgiai.ttf)
+      format("truetype"),
+    url(/landers/2333/[3499]arbitrox_android_blog_fr_ch/assets/fonts/georgia/georgiaz.ttf)
+      format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Georgia Bold";
+  src: url(/landers/2333/[3499]arbitrox_android_blog_fr_ch/assets/fonts/georgia/georgiab.ttf)
+    format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Georgia Italic";
+  src: url(/landers/2333/[3499]arbitrox_android_blog_fr_ch/assets/fonts/georgia/georgiai.ttf)
+    format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Georgia Bold Italic";
+  src: url(/landers/2333/[3499]arbitrox_android_blog_fr_ch/assets/fonts/georgia/georgiaz.ttf)
+    format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Helvetica */
+@font-face {
+  font-family: "Helvetica";
+  src: url(/landers/2333/[3499]arbitrox_android_blog_fr_ch/assets/fonts/helvetica/Helvetica.ttf)
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Bold";
+  src: url(/landers/2333/[3499]arbitrox_android_blog_fr_ch/assets/fonts/helvetica/Helvetica-Bold.ttf)
+    format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Bold Oblique";
+  src: url(/landers/2333/[3499]arbitrox_android_blog_fr_ch/assets/fonts/helvetica/Helvetica-BoldOblique.ttf)
+    format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Helvetica Compressed";
+  src: url(/landers/2333/[3499]arbitrox_android_blog_fr_ch/assets/fonts/helvetica/helvetica-compressed.otf)
+    format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Light";
+  src: url(/landers/2333/[3499]arbitrox_android_blog_fr_ch/assets/fonts/helvetica/helvetica-light.ttf)
+    format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Oblique";
+  src: url(/landers/2333/[3499]arbitrox_android_blog_fr_ch/assets/fonts/helvetica/Helvetica-Oblique.ttf)
+    format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+b {
+  font-family: "Helvetica Bold", sans-serif;
+}
+
+.article-content b {
+  font-family: "Georgia Bold", sans-serif;
+}
+
+body {
+  font-family: "Helvetica", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0%;
+  color: rgba(46, 46, 46, 1);
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.header {
+  background-color: rgba(255, 255, 255, 1);
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(221, 221, 221, 1);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 50px;
+}
+
+.nav-list li a {
+  color: rgba(115, 115, 115, 1);
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.nav-list li a:hover {
+  color: rgba(0, 0, 0, 1);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.search-btn img {
+  width: 17px;
+  height: 17px;
+}
+
+.subscribe-btn {
+  background-color: rgba(36, 36, 36, 1);
+  color: rgba(255, 255, 255, 1);
+  padding: 10px 15px;
+  font-size: 14px;
+}
+
+.subscribe-btn:hover {
+  background-color: rgba(0, 0, 0, 1);
+}
+
+/* Article */
+.article-content {
+  max-width: 720px;
+  margin: 20px auto;
+  padding: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  color: rgba(26, 26, 26, 1);
+  font-family: "Georgia", sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 30px;
+  letter-spacing: 0.19px;
+}
+
+.article-content h3 {
+  font-weight: 700;
+  font-family: "Georgia Bold", sans-serif;
+}
+
+.article-title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: rgba(46, 46, 46, 1);
+}
+
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.author-avatar {
+  width: 47px;
+  height: 47px;
+  border-radius: 50%;
+}
+
+.meta-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0px 16px 0px;
+}
+
+.author-name {
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(46, 46, 46, 1);
+}
+
+.publish-info {
+  font-size: 14px;
+  line-height: 20px;
+  color: rgba(115, 115, 115, 1);
+}
+
+.article-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.icons-left,
+.icons-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.article-icon {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Comments */
+.comments-container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.tags {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.tag {
+  background-color: rgba(229, 229, 229, 1);
+  color: rgba(115, 115, 115, 1);
+  padding: 0px 15px;
+  font-size: 11px;
+  border-radius: 34px;
+  line-height: 26px;
+  text-transform: uppercase;
+}
+
+.tag:hover {
+  opacity: 0.8;
+}
+
+.comments-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0px;
+  border-width: 1px 0px 1px 0px;
+  border-style: solid;
+  border-color: rgba(213, 213, 213, 1);
+}
+
+.comments-title {
+  font-size: 24px;
+  line-height: 32px;
+  color: rgba(46, 46, 46, 1);
+  margin: 20px 0px 30px 0px;
+}
+
+.comments-title span {
+  color: rgba(115, 115, 115, 1);
+}
+
+.comment {
+  margin-bottom: 10px;
+}
+
+.comment.reply {
+  margin-left: 40px;
+}
+
+.comment-author {
+  color: rgba(46, 46, 46, 1);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.comment-date {
+  font-size: 13px;
+  line-height: 20px;
+  color: rgba(115, 115, 115, 1);
+  margin-bottom: 10px;
+}
+
+.comment-text {
+  background-color: rgba(241, 241, 241, 1);
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 14px;
+  color: rgba(46, 46, 46, 1);
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+.comment-replies {
+  font-size: 14px;
+  line-height: 20px;
+  color: rgba(46, 46, 46, 1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.comment-replies-count {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.comment-likes {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.like-btn {
+  margin-left: auto;
+}
+
+.like-btn,
+.article-like-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: opacity 0.3s ease;
+}
+
+.like-icon,
+.article-like-icon {
+  width: 18px;
+  height: 18px;
+  transition: opacity 0.3s ease;
+}
+
+/* Эффект при наведении */
+.like-btn:hover img,
+.article-like-btn:hover img {
+  opacity: 0.7;
+}
+
+/* Лайкнутое состояние */
+.liked .like-icon,
+.liked .article-like-icon {
+  opacity: 1;
+}
+
+/* Footer */
+.footer {
+  padding: 30px 0;
+  border-top: 1px solid rgba(221, 221, 221, 1);
+}
+
+.footer-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 64px;
+}
+
+.footer-icons img {
+  width: 24px;
+  height: 24px;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.footer-icons img:hover {
+  opacity: 1;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  color: rgba(46, 46, 46, 1);
+  font-size: 14px;
+  line-height: 20px;
+  transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+  opacity: 0.8;
+}
+
+.footer-copy {
+  font-size: 14px;
+  color: rgba(115, 115, 115, 1);
+  line-height: 20px;
+}
+
+@media (max-width: 1024px) {
+  .article-content,
+  .comments-container {
+    max-width: 100%;
+  }
+  .container {
+    padding: 0px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0px 10px;
+  }
+  .nav,
+  .search-btn {
+    display: none;
+  }
+
+  .footer-nav {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 1024px) {
+  .lander-form-field .lander-submit {
+    font-size: 16px !important;
+  }
+  .lander-form-field .lander-submit:hover {
+    font-size: 16px !important;
+  }
+}
+
+.footer-disclaimer,
+.footer-license {
+  font-size: 12px;
+  border-bottom: 1px solid #3e3e3e;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  text-align: left;
+  line-height: 1.5;
+}
+

@@ -1,0 +1,21 @@
+body {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+}
+
+.section {
+    width: 100%;
+    padding: 6rem 0;
+}
+
+.container {
+    max-width: 156rem;
+    width: 100%;
+    padding: 0 6rem;
+    margin: 0 auto;
+}

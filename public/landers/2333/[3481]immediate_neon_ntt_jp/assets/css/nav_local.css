@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+/**********************************************************
+ *
+ * info 共通パーツ
+ *
+ **********************************************************/
+/* nav-local
+-------------------------------------------*/
+.contents-sub{
+	display: none !important;
+}
+@media screen and (min-width: 768px) {
+	.contents-main {
+		width: 100% !important;
+		float: none !important;
+	}
+}
+
+/* 旧ページ
+-------------------------------------------*/
+#mainwrap #rightcol{
+	display: none !important;
+}
+#mainwrap #leftcol{
+	float: none;
+}

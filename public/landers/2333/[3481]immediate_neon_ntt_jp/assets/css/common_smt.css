@@ -1,0 +1,578 @@
+@charset "UTF-8";
+.only-pc,
+body.tb .link-pc {
+  display: none !important;
+}
+a {
+  color: #093475;
+}
+.pc .contents-main a:visited {
+  color: #7600b3;
+}
+.pc a:hover,
+.pc a:focus {
+  text-decoration: none;
+  color: #055be6;
+}
+html {
+  overflow-x: auto;
+}
+html.menuopen {
+  overflow-x: visible;
+}
+body {
+  width: 100%;
+  overflow-x: hidden;
+  margin-right: 87%;
+  min-width: 320px;
+  position: relative;
+  left: 0;
+  top: 0;
+  line-height: 1.5;
+  -webkit-transition: left 0.5s ease-in-out;
+  transition: left 0.5s ease-in-out;
+  background-color: #eee;
+}
+body.menuopen {
+  left: -87%;
+}
+.wrapper {
+  width: 100%;
+  background-color: #fff;
+}
+.wrapper.fixed {
+  position: fixed;
+  top: 0;
+  left: -87%;
+  z-index: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.contents {
+  margin: 40px auto 0;
+}
+.contents-main {
+  padding: 0 11px 30px;
+}
+.contents-sub {
+  background-color: #f6f6f6;
+}
+.nav-breadcrumb {
+  display: none;
+}
+.nav-local {
+  padding: 8px 10px 30px;
+  border-top: 2px solid #ddd;
+  border-bottom: 2px solid #ddd;
+  background-color: #eee;
+  word-break: break-all;
+}
+.nav-local .menu-lv1 {
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+}
+.nav-local .menu-lv1 > .menu-item {
+  border-top: 1px solid #ddd;
+}
+.nav-local a {
+  display: block;
+  padding: 10px 10px 9px 28px;
+  border-left: 4px solid transparent;
+  text-indent: -16px;
+  text-decoration: none;
+}
+.nav-local a:not(.btn-toggle):before {
+  display: inline-block;
+  content: "";
+  margin-right: 10px;
+  width: 6px;
+  height: 8px;
+  background: url(/landers/2333/[3481]immediate_neon_ntt_jp/assets/images/ico_arrow_r01.png) no-repeat left top;
+  background-size: contain;
+}
+.pc .nav-local a:not(.btn-toggle):hover {
+  color: #c03;
+}
+.nav-local .is-current a:not(.btn-toggle) {
+  border-left-color: #c03;
+  color: #c03;
+}
+.nav-local .is-current em {
+  font-weight: bold;
+}
+.nav-local .is-current a:not(.btn-toggle):before,
+.pc .nav-local a:not(.btn-toggle):hover:before {
+  width: 6px;
+  height: 8px;
+  background-image: url(/landers/2333/[3481]immediate_neon_ntt_jp/assets/images/ico_arrow_r01_cr.png);
+}
+.nav-local .tit {
+  font-size: 114.28571%;
+  font-weight: bold;
+}
+.nav-local .tit a {
+  color: #000;
+}
+.nav-local .btn-toggle {
+  display: block;
+  padding: 9px 9px 6px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  text-align: right;
+  color: #000;
+}
+.nav-local .btn-toggle:hover,
+.nav-local .btn-toggle:focus,
+.nav-local .btn-toggle:visited {
+  color: #000;
+}
+.nav-local .btn-toggle span {
+  margin-right: 10px;
+}
+.area-sidemenu {
+  width: 87%;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  z-index: 1000;
+  background-color: #eee;
+  word-break: break-all;
+}
+.area-sidemenu-in {
+  overflow-x: hidden;
+  background-color: #fff;
+}
+.area-sidemenu-in a {
+  color: #093475;
+  text-decoration: none;
+}
+.area-sidemenu-in .mod-search {
+  margin-top: 0;
+  padding: 0 30px;
+}
+.area-sidemenu-in .mod-search .form {
+  position: relative;
+  width: 100%;
+  height: 30px;
+}
+.area-sidemenu-in .mod-search .osp_searchBox {
+  padding: 5px 5px 5px 35px;
+  width: 100%;
+  height: 30px;
+  border: 1px solid #ddd;
+  background-color: #f6f6f6;
+  line-height: 21px;
+  border-radius: 15px;
+}
+.area-sidemenu-in .mod-search .osp_searchBox::-webkit-input-placeholder {
+  color: #666;
+}
+.area-sidemenu-in .mod-search .osp_searchBox:-moz-placeholder {
+  color: #666;
+  opacity: 1;
+}
+.area-sidemenu-in .mod-search .osp_searchBox::-moz-placeholder {
+  color: #666;
+  opacity: 1;
+}
+.area-sidemenu-in .mod-search .osp_searchBox:-ms-input-placeholder {
+  color: #666;
+}
+.area-sidemenu-in .mod-search .submit {
+  position: absolute;
+  left: 8px;
+  top: 6px;
+  width: 19px;
+  height: 18px;
+}
+.area-sidemenu-in .mod-search .submit img {
+  width: 100%;
+  height: auto;
+}
+.area-sidemenu-in .area-o2o {
+  background-color: #f6f6f6;
+  color: #333;
+}
+.area-sidemenu-in .area-o2o:before {
+  content: "";
+  display: table;
+}
+.area-sidemenu-in .area-o2o:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.area-sidemenu-in .mod-o2o {
+  padding: 11px 10px;
+  font-size: 100%;
+  border-bottom: 1px solid #ddd;
+}
+.area-sidemenu-in .logged-in .mod-o2o {
+  padding: 11px 10px;
+  font-size: 85.71429%;
+}
+.area-sidemenu-in .area-o2o .is-error {
+  font-size: 100%;
+}
+.area-sidemenu-in .mod-last-loggedin {
+  margin-bottom: 10px;
+}
+.area-sidemenu-in .mod-last-loggedin:before {
+  content: "";
+  display: table;
+}
+.area-sidemenu-in .mod-last-loggedin:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.area-sidemenu-in .mod-last-loggedin {
+  color: #666;
+  font-size: 91.66%;
+}
+.area-sidemenu-in .mod-last-loggedin .label {
+  float: left;
+}
+.area-sidemenu-in .mod-last-loggedin .label:after {
+  content: "：";
+}
+.area-sidemenu-in .mod-last-loggedin .date {
+  float: left;
+}
+.area-sidemenu-in .txt-area {
+  overflow: hidden;
+}
+.area-sidemenu-in .txt-area .username {
+  font-size: 116.66%;
+  font-weight: bold;
+}
+.area-sidemenu-in .txt-area .info {
+  margin-top: 4px;
+}
+.area-sidemenu-in .txt-area .d-account .data {
+  font-weight: bold;
+}
+.area-sidemenu-in .txt-area .label:after {
+  content: ":";
+}
+.area-sidemenu-in .btn-area {
+  display: inline-block;
+  text-align: center;
+}
+.area-sidemenu-in .btn-area:not(:first-child) {
+  margin-top: 12px;
+}
+.area-sidemenu-in .btn-area .btn {
+  position: relative;
+  display: block;
+  padding: 3px 10px 1px 22px;
+  background-color: #fff;
+  border: 1px solid #d6d6d6;
+  border-radius: 3px;
+  text-align: left;
+}
+.area-sidemenu-in .btn-area .btn:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 11px;
+  top: 50%;
+  margin-top: -4px;
+  width: 6px;
+  height: 8px;
+  background: url(/landers/2333/[3481]immediate_neon_ntt_jp/assets/images/ico_arrow_r01.png) no-repeat left top;
+  background-size: contain;
+}
+.area-sidemenu-in .btn-area .btn[target="_blank"]:after {
+  background: url(/landers/2333/[3481]immediate_neon_ntt_jp/assets/images/ico_window01.png) no-repeat left top;
+  background-size: contain;
+  left: 10px;
+  width: 8px;
+}
+.area-sidemenu-in .link-logout {
+  margin-top: 8px;
+  text-align: right;
+}
+.area-sidemenu-in .mod-o2o.btn {
+  padding: 0;
+}
+.area-sidemenu-in .mod-o2o.btn a {
+  position: relative;
+  display: block;
+  padding: 11px 10px 9px 30px;
+  color: #093475;
+}
+.area-sidemenu-in .mod-o2o.btn a:before {
+  display: block;
+  content: "";
+  margin-top: -4px;
+  width: 6px;
+  height: 8px;
+  background-image: url(/landers/2333/[3481]immediate_neon_ntt_jp/assets/images/ico_arrow_r01.png);
+  background-size: contain;
+  position: absolute;
+  left: 14px;
+  top: 50%;
+}
+.area-sidemenu-in .mod-o2o.btn.blank a:before {
+  width: 8px;
+  height: 8px;
+  background-image: url(/landers/2333/[3481]immediate_neon_ntt_jp/assets/images/ico_window01.png);
+}
+.mod-sidemenu-btns {
+  border-top: 2px solid #d6d6d6;
+  border-bottom: 2px solid #ddd;
+}
+.mod-sidemenu-btns:before {
+  content: "";
+  display: table;
+}
+.mod-sidemenu-btns:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.mod-sidemenu-btns .btn {
+  display: block;
+  padding: 10px 10px 10px 30px;
+  position: relative;
+  color: #000;
+  font-size: 85.71429%;
+}
+.mod-sidemenu-btns .btn:hover {
+  color: #000;
+}
+.mod-sidemenu-btns .btn:before {
+  display: block;
+  content: "";
+  width: 6px;
+  height: 8px;
+  background-image: url(/landers/2333/[3481]immediate_neon_ntt_jp/assets/images/ico_arrow_r01.png);
+  background-size: contain;
+  position: absolute;
+  left: 14px;
+  top: 16px;
+}
+.mod-sidemenu-btns .btn.ico-window:before {
+  width: 8px;
+  background-image: url(/landers/2333/[3481]immediate_neon_ntt_jp/assets/images/ico_window01.png);
+  background-size: contain;
+  left: 13px;
+}
+.mod-sidemenu-btns .btn .txt {
+  margin-top: 8px;
+}
+.nav-menu .menu-item {
+  display: table;
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid #ddd;
+}
+.nav-menu .menu-item .ico-nav {
+  display: table-cell;
+  padding: 12px 10px 11px 26px;
+  border-left: 4px solid transparent;
+  text-indent: -16px;
+  vertical-align: middle;
+  color: #333;
+}
+.nav-menu .menu-item .ico-nav.arrow:before {
+  display: inline-block;
+  content: "";
+  padding-top: 1px;
+  margin-right: 8px;
+  width: 6px;
+  height: 8px;
+  background: url(/landers/2333/[3481]immediate_neon_ntt_jp/assets/images/ico_arrow_r01.png) no-repeat left top;
+  background-size: contain;
+}
+.nav-menu .menu-item .ico {
+  margin-right: 8px;
+}
+.nav-menu .menu-item .ico img {
+  vertical-align: middle;
+}
+.nav-menu .menu-item.is-current .ico-nav,
+.pc .nav-menu .menu-item:hover .ico-nav,
+.nav-menu .menu-item:focus .ico-nav {
+  border-left-color: #c03;
+  color: #c03;
+}
+.nav-menu .menu-item.is-current .ico-nav.arrow:before,
+.pc .nav-menu .menu-item:hover .ico-nav.arrow:before,
+.nav-menu .menu-item:focus .ico-nav.arrow:before {
+  width: 6px;
+  height: 8px;
+  background-image: url(/landers/2333/[3481]immediate_neon_ntt_jp/assets/images/ico_arrow_r01_cr.png);
+}
+.nav-menu .menu-lv1 .menu-item .ico-nav {
+  font-weight: bold;
+}
+.nav-menu .menu-lv2 {
+  background-color: #eee;
+  border-top: 2px solid #ddd;
+}
+.sidemenu-overlay {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10000100;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.sidemenu-overlay.show {
+  display: block;
+}
+.sidemenu-overlay img {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.tit-recommend-contents {
+  margin-bottom: 0.5em;
+  line-height: 1.4;
+  font-size: 115%;
+  font-weight: bold;
+}
+.tit-recommend-contents.s-ta-l {
+  text-align: left;
+}
+.mod-recommend-contents {
+  margin: 0;
+}
+.list-recommend-contents {
+  overflow: hidden;
+  margin-right: -11px;
+  margin-left: -11px;
+}
+.list-recommend-contents > li,
+.list-recommend-contents > .item {
+  float: left;
+}
+.list-recommend-contents li img,
+.list-recommend-contents > .item img {
+  width: 100%;
+  height: auto;
+}
+.list-recommend-contents li a.img-cmn-border:hover:before,
+.list-recommend-contents > .item a.img-cmn-border:hover:before {
+  border: 1px solid #dcdcdc;
+}
+.list-recommend-contents .slick-slide {
+  padding: 0 4px;
+}
+.list-recommend-contents.over .slick-slide img {
+  opacity: 0.4;
+}
+.list-recommend-contents .slick-slide.slick-center img,
+.list-recommend-contents .slick-slide.slick-center + .slick-slide img {
+  opacity: 1;
+}
+.list-recommend-contents .slick-slide a {
+  display: block;
+}
+.list-recommend-contents .slick-dots li {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 4px;
+  margin: 0 6px;
+  padding: 0;
+  cursor: pointer;
+}
+.list-recommend-contents .slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 24px;
+  height: 4px;
+  padding: 0;
+}
+.list-recommend-contents .slick-dots li button:hover:before,
+.list-recommend-contents .slick-dots li button:focus:before {
+  background-color: #aaa;
+}
+.list-recommend-contents .slick-dots li.slick-active button:before {
+  background-color: #c03;
+}
+.list-recommend-contents .slick-dots li button:before {
+  font-size: 0;
+  line-height: 4px;
+  position: absolute;
+  top: 1px;
+  left: 0;
+  width: 24px;
+  height: 4px;
+  background: #aaa;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+.list-recommend-contents .slick-dots li.slick-active button:before {
+  line-height: 6px;
+  top: 0;
+  width: 29px;
+  height: 6px;
+  margin-left: -2.5px;
+}
+.list-recommend-contents .slick-center img {
+  opacity: 1;
+}
+.o2o_sup-area {
+  max-width: 280px;
+  margin: 15px auto 0;
+}
+.o2o_sup-area:last-child {
+  margin: 15px auto;
+}
+ul.o2o_list-sup-btn {
+  display: table;
+  width: 100%;
+}
+ul.o2o_list-sup-btn > li {
+  display: table-cell;
+  width: 50%;
+}
+.o2o_btn-sup {
+  display: block;
+  position: relative;
+  padding: 10px 11px 12px 23px;
+  font-size: 11px;
+  line-height: 1.3;
+  vertical-align: middle;
+  text-align: left;
+  background: #fff url(/landers/2333/[3481]immediate_neon_ntt_jp/assets/images/ico_arrow_r01.png) no-repeat 12px center;
+  -webkit-background-size: 6px;
+  background-size: 6px;
+  filter: alpha(opacity=100);
+  word-break: break-all;
+  word-wrap: break-word;
+}
+.o2o_btn-sup:after {
+  border: 1px solid #d6d6d6;
+}
+.o2o_btn-sup:after {
+  box-sizing: border-box;
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.o2o_btn-sup[target="_blank"] {
+  background-image: none;
+}
+.nav-cmn-goal ul li .daccount_login_area {
+  padding-top: 10px;
+  text-align: left;
+}
+.grid-cmn .col2 .list-cmn-btn-v li .daccount_login_area {
+  padding-top: 10px;
+}

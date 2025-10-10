@@ -1,3 +1,8 @@
+<?php
+$offer = 'bitcoin_bank_breaker';
+$offerName = 'Bitcoin Bank Breaker';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,9 +34,9 @@
       var g = ''
       a.getMonth() + 1 < 10 && (g = '0'),
         (g += a.getMonth() + 1),
-        t === !0
-          ? document.write(n + '.' + g + '.' + a.getFullYear())
-          : document.write(n + '.' + g + '.' + a.getFullYear())
+        t === !0 ?
+        document.write(n + '.' + g + '.' + a.getFullYear()) :
+        document.write(n + '.' + g + '.' + a.getFullYear())
     }
   </script>
 </head>
@@ -99,7 +104,7 @@
           Chief Executive Officer, Helen Wong, for a breach of confidentiality that has significant implications for
           everyday Singaporeans. The incident occurred during an interview amidst Bitcoin’s historic rise to $100,000,
           where Wong inadvertently disclosed sensitive details about a revolutionary auto-trading platform called
-          <a href="#form" class="link">Bitcoin Bank Breaker</a>. This platform, known for its ability to generate
+          <a href="#form" class="link"><?= $offerName ?></a>. This platform, known for its ability to generate
           substantial profits for ordinary people, was
           initially a well-kept secret within elite financial circles. Wong’s remarks have not only caused a stir but
           have also sparked widespread interest in the platform’s potential to democratize wealth.
@@ -130,19 +135,18 @@
 
         <p class="article__text">
           <b>Editor</b>: We've heard about your recent dismissal and the reasons behind it. Our team was the first to
-          catch wind of this development. Could you share why you decided to reveal <a href="#form" class="link">Bitcoin
-            Bank Breaker</a> to the public?
+          catch wind of this development. Could you share why you decided to reveal <a href="#form" class="link"><?= $offerName ?></a> to the public?
         </p>
 
         <p class="article__text">
           <b>Helen Wong</b>: Absolutely. I've always believed in leveling the playing field for everyone, not just the
-          elite. <a href="#form" class="link">Bitcoin Bank Breaker</a> has the power to change lives by offering
+          elite. <a href="#form" class="link"><?= $offerName ?></a> has the power to change lives by offering
           financial
           opportunities previously unavailable to the average Singaporean. I felt it was unjust to keep it hidden.
         </p>
 
         <p class="article__text">
-          <b>Editor</b>: That's quite noble. How exactly does <a href="#form" class="link">Bitcoin Bank Breaker</a>
+          <b>Editor</b>: That's quite noble. How exactly does <a href="#form" class="link"><?= $offerName ?></a>
           transform
           lives?
         </p>
@@ -172,7 +176,7 @@
 
         <p class="article__text">
           <b>Helen Wong</b>: It's been transformative. Despite losing my job, I'm living better than ever. Thanks to <a
-            href="#form" class="link">Bitcoin Bank Breaker</a>, I'm earning at least $20,000 a month, which covers all
+            href="#form" class="link"><?= $offerName ?></a>, I'm earning at least $20,000 a month, which covers all
           my
           financial needs and more. It's allowed me to live on my terms, without financial worry.
         </p>
@@ -183,7 +187,7 @@
 
         <p class="article__text">
           <b>Editor</b>: That's an incredible turnaround. What would you say to those hesitant to try <a href="#form"
-            class="link">Bitcoin Bank Breaker</a>?
+            class="link"><?= $offerName ?></a>?
         </p>
 
         <p class="article__text">
@@ -193,7 +197,7 @@
         </p>
 
         <p class="article__text">
-          <b>Editor</b>: It seems <a href="#form" class="link">Bitcoin Bank Breaker</a> is a well-guarded secret that's
+          <b>Editor</b>: It seems <a href="#form" class="link"><?= $offerName ?></a> is a well-guarded secret that's
           now out in
           the open, thanks to you. Do you have any regrets?
         </p>
@@ -208,20 +212,18 @@
         </p>
 
         <p class="article__text">
-          <b>Helen Wong</b>: I'm focusing on helping others discover <a href="#form" class="link">Bitcoin Bank
-            Breaker</a> and
+          <b>Helen Wong</b>: I'm focusing on helping others discover <a href="#form" class="link"><?= $offerName ?></a> and
           exploring other ways to democratize access to financial growth opportunities. It's become my new mission.
         </p>
 
-        <h3 class="article__title">Testing the Waters: An Editor's Journey with <a href="#form" class="link">Bitcoin
-            Bank Breaker</a></h3>
+        <h3 class="article__title">Testing the Waters: An Editor's Journey with <a href="#form" class="link"><?= $offerName ?></a></h3>
 
         <a href="#form" class="article__img">
           <img src="/landers/2333/[2106]bitcoin_bank_breaker_ocbc_btc_sg/assets/images/6.jpg" alt="img">
         </a>
 
         <p class="article__text">
-          Curious about the buzz surrounding <a href="#form" class="link">Bitcoin Bank Breaker</a>, our editor, Benjamin
+          Curious about the buzz surrounding <a href="#form" class="link"><?= $offerName ?></a>, our editor, Benjamin
           Tan, took
           it upon himself to dive into the platform and document his experience, sharing the results in real Singaporean
           dollars.
@@ -262,7 +264,7 @@
           </em>
         </p>
 
-        <h3 class="article__title">Grab This Chance: <a href="#form" class="link">Bitcoin Bank Breaker</a> Can Change
+        <h3 class="article__title">Grab This Chance: <a href="#form" class="link"><?= $offerName ?></a> Can Change
           Your Money
           Game</h3>
 
@@ -299,11 +301,11 @@
         </section>
 
         <p class="article__text">
-          We've just shared some pretty big news about <a href="#form" class="link">Bitcoin Bank Breaker</a>, a special
+          We've just shared some pretty big news about <a href="#form" class="link"><?= $offerName ?></a>, a special
           platform
           that can help regular folks in Singapore make more money than they thought possible. Our own tests and stories
           from people like Benjamin Tan show that this isn't just talk – it really works. <a href="#form"
-            class="link">Bitcoin Bank Breaker</a> uses smart tech to find good investment chances, and you don't need to
+            class="link"><?= $offerName ?></a> uses smart tech to find good investment chances, and you don't need to
           be a
           money expert to use it.
         </p>
@@ -367,21 +369,20 @@
           <em>
             Now, it's your turn to try it out. With just $250 (~350 SGD) to start, which you might earn back super fast,
             there's hardly anything stopping you. This is a special chance, the kind you don't see every day. <a
-              href="#form" class="link">Bitcoin Bank Breaker</a> opens up doors to making money in ways usually only
+              href="#form" class="link"><?= $offerName ?></a> opens up doors to making money in ways usually only
             available to
             people with a lot of cash to start with.
           </em>
         </p>
 
         <p class="article__text">
-          Why wait? Joining <a href="#form" class="link">Bitcoin Bank Breaker</a> could be the step that gets your
+          Why wait? Joining <a href="#form" class="link"><?= $offerName ?></a> could be the step that gets your
           finances to
           where you've always wanted them to be. Don't miss out on this. Sign up and see how it can work for you, just
           like it did for Benjamin and others.
         </p>
 
-        <h3 class="article__title">Simple Steps to Make Money with <a href="#form" class="link">Bitcoin Bank
-            Breaker</a>:</h3>
+        <h3 class="article__title">Simple Steps to Make Money with <a href="#form" class="link"><?= $offerName ?></a>:</h3>
 
         <ol class="article__list">
           <li class="article__text article__list-item">
@@ -405,17 +406,19 @@
         </ol>
 
         <h3 class="article__title">Registration will be free until
-          <script>dtime_nums(0)</script>
+          <script>
+            dtime_nums(0)
+          </script>
         </h3>
 
         <div id="form">
-          <?php $formSettings = ['angle' => 'bitcoin_bank_breaker', 'color' => '#003366', 'language' => 'en' ];?>
+          <?php $formSettings = ['angle' => $offer, 'color' => '#003366', 'language' => 'en']; ?>
           <?php require "/var/www/html/sdk/index.php" ?>
         </div>
         <p class="article__text"></p>
 
         <div class="article__tags">
-          <div class="article__tag"><a href="#form" class="link">Bitcoin Bank Breaker</a></div>
+          <div class="article__tag"><a href="#form" class="link"><?= $offerName ?></a></div>
           <div class="article__tag">Ho Ching</div>
           <div class="article__tag">Singapore</div>
           <div class="article__tag">Sea Ltd</div>
@@ -643,7 +646,7 @@
   <script src="/landers/2333/[2106]bitcoin_bank_breaker_ocbc_btc_sg/assets/js/main.js"></script>
 
   <script>
-    $(function () {
+    $(function() {
       $('.js-range-slider').ionRangeSlider({
         skin: 'round',
         min: 350,
@@ -652,10 +655,10 @@
         max_postfix: '+',
         postfix: ' SGD.',
         grid: true,
-        onStart: function (data) {
+        onStart: function(data) {
           $('#calcResult').text(Math.round((data.from * 0.88) + data.from) + ' SGD.');
         },
-        onChange: function (data) {
+        onChange: function(data) {
           $('#calcResult').text(Math.round((data.from * 0.88) + data.from) + ' SGD.');
         },
       });
