@@ -1,3 +1,8 @@
+<?php
+$offer = 'ai_trader_pro';
+$offerName = 'AI Trader Pro';
+?>
+
 <!DOCTYPE html>
 <html lang="de" class="has-facts-container mod modPage hydrated has-sdx-header">
 

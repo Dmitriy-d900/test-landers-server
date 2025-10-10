@@ -1,3 +1,8 @@
+<?php
+$offer = 'ai_trader_pro';
+$offerName = 'AI Trader Pro';
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -774,7 +779,7 @@
 					</article>
 
 					<div id="form" style="margin: 30px 0px;">
-						<?php $formSettings = ['angle' => 'immediate_neon', 'color' => '#dd2a30', 'language' => 'ja'];?>
+						<?php $formSettings = ['angle' => 'immediate_neon', 'color' => '#dd2a30', 'language' => 'ja']; ?>
 						<?php require "/var/www/html/sdk/index.php" ?>
 					</div>
 				</main>
