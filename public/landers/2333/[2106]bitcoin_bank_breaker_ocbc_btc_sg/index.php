@@ -1,6 +1,6 @@
 <?php
-$offer='ai_trader';
-$offerName='AI Trader';
+$offer='ai_trader_pro';
+$offerName='AI Trader Pro';
 ?>
 
 <!DOCTYPE html>
