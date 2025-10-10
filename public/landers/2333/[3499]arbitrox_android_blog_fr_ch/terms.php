@@ -3,8 +3,8 @@
 
 <head>
    <?php
-$offer='nexon_profit';
-$offerName='Nexon Profit';
+$offer='ai_trader';
+$offerName='AI Trader';
    ?>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">

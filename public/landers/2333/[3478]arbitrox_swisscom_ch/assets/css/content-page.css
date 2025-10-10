@@ -1,0 +1,20 @@
+.page:not(.home-page) > main > .root > .aem-Grid > .responsivegrid,
+.page:not(.home-page) > .root > .aem-Grid > .responsivegrid {
+  max-width: 1380px;
+  margin: 0px auto;
+  float: none;
+
+  padding-left: 18px;
+  padding-right: 18px;
+}
+.xf-web-container > .xp-fragment-container > .root.responsivegrid {
+  max-width: 1380px;
+  margin: 0px auto;
+  float: none;
+
+  padding-left: 18px;
+  padding-right: 18px;
+  .aem-GridColumn {
+    padding-bottom: 0;
+  }
+}

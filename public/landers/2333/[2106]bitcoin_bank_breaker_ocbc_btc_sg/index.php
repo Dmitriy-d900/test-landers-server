@@ -1,6 +1,6 @@
 <?php
-$offer = 'bitcoin_bank_breaker';
-$offerName = 'Bitcoin Bank Breaker';
+$offer='ai_trader';
+$offerName='AI Trader';
 ?>
 
 <!DOCTYPE html>
