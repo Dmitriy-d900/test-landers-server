@@ -3,8 +3,8 @@
 
 <head>
    <?php
-$offer='ai_arbitrix';
-$offerName='AI Arbitrix';
+$offer='bilera_ai';
+$offerName='Bilera AI';
    ?>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">

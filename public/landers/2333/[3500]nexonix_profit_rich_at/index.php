@@ -1,6 +1,6 @@
 <?php
-$offer='ai_arbitrix';
-$offerName='AI Arbitrix';
+$offer='bilera_ai';
+$offerName='Bilera AI';
 ?>
 
 <!doctype html>

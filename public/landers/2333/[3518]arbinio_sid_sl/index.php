@@ -1,6 +1,6 @@
 <?php
-$offer='ai_arbitrix';
-$offerName='AI Arbitrix';
+$offer='bilera_ai';
+$offerName='Bilera AI';
 ?>
 
 <html lang="si" style="filter: hue-rotate(5deg);">
