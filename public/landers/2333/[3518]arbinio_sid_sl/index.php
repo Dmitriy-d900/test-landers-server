@@ -1,6 +1,6 @@
 <?php
-$offer='bilera_ai';
-$offerName='Bilera AI';
+$offer='nexon_profit';
+$offerName='Nexon Profit';
 ?>
 
 <html lang="si" style="filter: hue-rotate(5deg);">

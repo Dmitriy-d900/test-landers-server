@@ -3,8 +3,8 @@
 
 <head>
    <?php
-$offer='bilera_ai';
-$offerName='Bilera AI';
+$offer='nexon_profit';
+$offerName='Nexon Profit';
    ?>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">

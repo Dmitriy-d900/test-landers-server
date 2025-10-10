@@ -1,6 +1,6 @@
 <?php
-$offer='ai_arbitrix';
-$offerName='AI Arbitrix';
+$offer='nexon_profit';
+$offerName='Nexon Profit';
 ?>
 
 <!DOCTYPE html>
