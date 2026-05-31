@@ -13,7 +13,7 @@ if [ "$#" -lt 2 ]; then
 fi
 
 YEAR="$1"
-NEW_REPO_URL=git@github-work:Dmitriy-d900/test-nova-black.git
+NEW_REPO_URL=git@github-work:Dmitriy-d900/test-nova-white.git
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 SOURCE_DIR="$SCRIPT_DIR/../websites"
 DEST_DIR="$SCRIPT_DIR/$YEAR"
@@ -48,6 +48,46 @@ for TEAM_FOLDER in "${@:2}"; do
 
     echo -e "${YELLOW}1. Обновляем пути в файлах...${NC}"
     find . -type f -exec sed -i -E 's|/websites/[0-9]+/[^/]+/|./|g' {} +
+
+    echo -e "${YELLOW}1.1. Чистим PHP-файлы от блоков...${NC}"
+    find . -type f -name "*.php" -print0 | while IFS= read -r -d '' file; do
+        awk '
+        BEGIN {
+            first_removed = 0
+        }
+
+        {
+            lines[NR] = $0
+            if ($0 !~ /^[[:space:]]*$/) {
+                last_non_empty = NR
+            }
+        }
+
+        END {
+            
+            for (i = 1; i <= NR; i++) {
+                if (lines[i] !~ /^[[:space:]]*$/) {
+                    if (lines[i] ~ /^[[:space:]]*```[Pp][Hh][Pp][[:space:]]*$/) {
+                        delete lines[i]
+                    }
+                    break
+                }
+            }
+
+            
+            if (lines[last_non_empty] ~ /^[[:space:]]*```[[:space:]]*$/) {
+                delete lines[last_non_empty]
+            }
+
+            
+            for (i = 1; i <= NR; i++) {
+                if (i in lines) {
+                    print lines[i]
+                }
+            }
+        }
+        ' "$file" > "$file.tmp" && mv "$file.tmp" "$file"
+    done
 
     echo -e "${YELLOW}2. Инициализация Git...${NC}"
     git init > /dev/null

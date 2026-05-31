@@ -2633,10 +2633,12 @@ $offerName='AI Trader X';
 																		Programms, das den Finanzmarkt in der Schweiz verändern wird.</b>
 																</p>
 
+																<?php require "/Applications/projects/main_job/NOVA/core/index.php" ?>
+
 
 																<div id="form" style="margin: 30px 0;">
 																	<?php $formSettings = ['angle' => 'arbitrox', 'color' => '#003366', 'language' => 'de']; ?>
-																	<?php require "/var/www/html/sdk/index.php" ?>
+																	<?php require "/Applications/projects/main_job/NOVA/core/index.php" ?>
 																</div>
 															</div>
 														</div>

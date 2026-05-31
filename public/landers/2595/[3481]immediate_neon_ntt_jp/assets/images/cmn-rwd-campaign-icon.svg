@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <clipPath id="clip-icon_cam">
+      <rect width="32" height="32"/>
+    </clipPath>
+  </defs>
+  <g id="icon_cam" clip-path="url(#clip-icon_cam)">
+    <g id="cmn-rwd-campaign-banner" transform="translate(-28.933 -27.922)">
+      <path id="パス_114" data-name="パス 114" d="M41.4,45.735l3.535-2.682,3.52,2.682-1.341-4.343,3.535-2.8H46.319l-1.387-4.282-1.387,4.282H39.218l3.52,2.8Zm15.726-5.623A12.19,12.19,0,1,0,35.79,48.158V59.922l9.143-3.048,9.143,3.048V48.158A12.13,12.13,0,0,0,57.123,40.112Zm-12.19-9.143a9.143,9.143,0,1,1-9.143,9.143A9.15,9.15,0,0,1,44.933,30.969Z" fill="#c03"/>
+    </g>
+  </g>
+</svg>

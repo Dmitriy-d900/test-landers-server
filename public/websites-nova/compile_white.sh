@@ -13,7 +13,7 @@ if [ "$#" -lt 2 ]; then
 fi
 
 YEAR="$1"
-NEW_REPO_URL=git@github-work:Dmitriy-d900/test-nova-black.git
+NEW_REPO_URL=git@github-work:Dmitriy-d900/test-nova-white.git
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 SOURCE_DIR="$SCRIPT_DIR/../websites"
 DEST_DIR="$SCRIPT_DIR/$YEAR"
@@ -30,10 +30,12 @@ fi
 mkdir -p "$DEST_DIR"
 
 PUSHED_BRANCHES=()
+FAILED_BRANCHES=()
+SKIPPED_FOLDERS=()
 
 minify_assets() {
     local project_dir="$1"
-
+    
     # echo -e "${YELLOW}⚙️  Минификация HTML...${NC}"
     # find "$project_dir" -type f -name "*.html" | while read -r file; do
     #     echo "    → Минифицируем: $file"
@@ -72,6 +74,7 @@ for TEAM_FOLDER in "${@:2}"; do
 
     if [ ! -d "$YEAR/$TEAM_FOLDER" ]; then
         echo -e "${RED}Папка $YEAR/$TEAM_FOLDER не найдена, пропуск...${NC}"
+        SKIPPED_FOLDERS+=("$TEAM_FOLDER")
         continue
     fi
 
@@ -117,9 +120,11 @@ for TEAM_FOLDER in "${@:2}"; do
             rm -rf "$DEST_DIR/$TEAM_FOLDER"
         else
             echo -e "${RED}❌ Push прошёл, но ветка $BRANCH_NAME не найдена на удалённом репо!${NC}"
+            FAILED_BRANCHES+=("$BRANCH_NAME")
         fi
     else
         echo -e "${RED}❌ Ошибка при push, папка $TEAM_FOLDER не будет удалена.${NC}"
+        FAILED_BRANCHES+=("$BRANCH_NAME")
     fi
 
     cd "$SOURCE_DIR" || { echo -e "${RED}Не удалось вернуться в $SOURCE_DIR${NC}"; exit 1; }
@@ -137,4 +142,28 @@ if [ "${#PUSHED_BRANCHES[@]}" -gt 0 ]; then
     echo -e "${GREEN}-----------------------------${NC}"
 else
     echo -e "${YELLOW}Нет успешно загруженных веток.${NC}"
+fi
+
+if [ "${#FAILED_BRANCHES[@]}" -gt 0 ]; then
+    echo -e "${RED}-----------------------------${NC}"
+    echo -e "${RED}Не удалось залить веток: ${#FAILED_BRANCHES[@]}${NC}"
+    echo -e "${RED}Список веток:${NC}"
+    for b in "${FAILED_BRANCHES[@]}"; do
+        echo -e "${RED}  - ${b}${NC}"
+    done
+    echo -e "${RED}-----------------------------${NC}"
+else
+    echo -e "${YELLOW}Незалито веток: 0${NC}"
+fi
+
+if [ "${#SKIPPED_FOLDERS[@]}" -gt 0 ]; then
+    echo -e "${CYAN}-----------------------------${NC}"
+    echo -e "${CYAN}Пропущено папок: ${#SKIPPED_FOLDERS[@]}${NC}"
+    echo -e "${CYAN}Список папок:${NC}"
+    for b in "${SKIPPED_FOLDERS[@]}"; do
+        echo -e "${CYAN}  - ${b}${NC}"
+    done
+    echo -e "${CYAN}-----------------------------${NC}"
+else
+    echo -e "${YELLOW}Пропущено папок: 0${NC}"
 fi

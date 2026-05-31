@@ -1,0 +1,216 @@
+.tit-cmn-lv1 {
+  font-size: 142.8571%;
+  margin-right: -11px;
+  margin-left: -11px;
+  padding: 0 10px 10px;
+}
+.tit-cmn-lv1.s-contents-margin {
+  margin-right: 0;
+  margin-left: 0;
+}
+.tit-cmn-lv2 {
+  margin-top: 70px;
+  margin-right: -11px;
+  margin-left: -11px;
+  padding: 10px 11px;
+  position: relative;
+  background-color: #f2f2f2;
+  font-size: 128.5714%;
+  border-bottom: 2px solid #ccc;
+}
+.tit-cmn-lv2:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 4.5em;
+  border-bottom: 2px solid #c03;
+  left: 0;
+  bottom: 0;
+  margin-bottom: -2px;
+}
+.tit-cmn-lv2.s-red {
+  border-bottom: 1px solid #c03;
+}
+.grid-cmn.sec-cmn-lv2,
+.mod-cmn-tab {
+  overflow: inherit;
+}
+.grid-cmn.sec-cmn-lv2:after,
+.mod-cmn-tab:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.nav-cmn-box > .tit-cmn-lv2 {
+  background-color: inherit;
+  margin-right: 0;
+  margin-left: 0;
+}
+.box-cmn-toggle .tit-cmn-lv2 {
+  background-color: inherit;
+}
+.box-cmn .tit-cmn-lv2 {
+  margin-top: 0;
+  margin-right: 0;
+  margin-left: 0;
+  padding: 0 0 11px;
+  background: 0;
+  font-size: 128.5714%;
+  border-bottom: 1px solid #aaa;
+}
+.box-cmn .tit-cmn-lv2:before {
+  border-bottom: 0;
+}
+[class*="sec-cmn"]:first-child,
+[class*="sec-cmn"]:first-child > .tit-cmn-lv2,
+[class*="sec-cmn"]:first-child > .tit-cmn-wrap .tit-cmn-lv2,
+.header-iphone + [class*="sec-cmn"],
+.header-iphone + [class*="sec-cmn"] > .tit-cmn-lv2,
+.header-ipad + [class*="sec-cmn"],
+.header-ipad + [class*="sec-cmn"] > .tit-cmn-lv2,
+.header-watch + [class*="sec-cmn"],
+.header-watch + [class*="sec-cmn"] > .tit-cmn-lv2,
+.list-accordion li:first-child > .js-accordion .tit-cmn-lv2 {
+  margin-top: 0;
+}
+.tit-cmn-lv3 {
+  position: relative;
+  padding-top: 0;
+  font-size: 114.2857%;
+  background-color: inherit;
+  background: url(/landers/2333/[3481]immediate_neon_ntt_jp/assets/images/ico_heddinglv3.svg) no-repeat left bottom;
+}
+.tit-cmn-lv3:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 1px;
+  left: 0;
+  bottom: 0;
+  background-color: #ccc;
+}
+.tit-cmn-lv4 {
+  padding: 1px 7px 0;
+  font-size: 114.2857%;
+  border-left: 2px solid #c03;
+  border-bottom: 0;
+  line-height: 1.2;
+}
+.tit-cmn-lv4 + .list-cmn-info > li:first-child {
+  padding-top: 6px;
+}
+.js-accordion .tit-cmn-lv4 + .toggle,
+.js-accordion-tab .tit-cmn-lv4 + .toggle {
+  top: 5px;
+  right: 0;
+}
+.tit-cmn-lv5 {
+  font-size: 114.2857%;
+  line-height: 1.2;
+}
+.tit-cmn-lv6 {
+  line-height: 1.2;
+}
+.box-cmn-topics > .tit-cmn-lv2,
+.box-cmn-topics > .tit-cmn-lv3,
+.box-cmn-topics > .tit-cmn-lv4,
+.box-cmn-topics > .tit-cmn-lv5,
+.box-cmn-topics > .tit-cmn-lv6 {
+  margin-right: 0;
+  margin-left: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  background: 0;
+  border: 0;
+}
+.box-cmn-topics > .tit-cmn-lv2:before,
+.box-cmn-topics > .tit-cmn-lv3:before {
+  width: 0;
+  height: 0;
+}
+.mod-cmn-aside-main {
+  padding: 10px 11px 25px;
+}
+.mod-cmn-aside-main > .tit-cmn-lv2,
+.mod-cmn-aside-main > .tit-cmn-lv3,
+.mod-cmn-aside-main > .tit-cmn-lv4,
+.mod-cmn-aside-main > .tit-cmn-lv5,
+.mod-cmn-aside-main > .tit-cmn-lv6 {
+  margin-right: 0;
+  margin-left: 0;
+  padding: 0;
+  background: 0;
+  border: 0;
+}
+.nav-cmn-box > .tit-cmn-lv2:before,
+.box-cmn-toggle .tit-cmn-lv2:before,
+.box-cmn-topics > .tit-cmn-lv2:before,
+.box-cmn-topics > .tit-cmn-lv3:before,
+.mod-cmn-aside-main > .tit-cmn-lv2:before,
+.mod-cmn-aside-main > .tit-cmn-lv3:before {
+  width: 0;
+  height: 0;
+}
+.nav-cmn-box > .tit-cmn-lv2,
+.box-cmn-toggle .tit-cmn-lv2,
+.box-cmn-topics > .tit-cmn-lv2,
+.mod-cmn-aside-main > .tit-cmn-lv2 {
+  margin-top: 0;
+  font-size: 129%;
+}
+.box-cmn-topics > .tit-cmn-lv3,
+.box-cmn-topics > .tit-cmn-lv4,
+.box-cmn-topics > .tit-cmn-lv5,
+.mod-cmn-aside-main > .tit-cmn-lv3,
+.mod-cmn-aside-main > .tit-cmn-lv4,
+.mod-cmn-aside-main > .tit-cmn-lv5 {
+  font-size: 115%;
+}
+.box-cmn-topics > .tit-cmn-lv6,
+.mod-cmn-aside-main > .tit-cmn-lv6 {
+  font-size: 100%;
+}
+.js-accordion .tit-cmn-lv2 + .toggle,
+.js-accordion-tab .tit-cmn-lv2 + .toggle,
+.js-accordion .tit-cmn-lv4 + .toggle,
+.js-accordion-tab .tit-cmn-lv4 + .toggle {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  height: 23px;
+}
+.js-accordion .tit-cmn-lv3 + .toggle,
+.js-accordion-tab .tit-cmn-lv3 + .toggle {
+  top: 5px;
+  right: 0;
+  height: 23px;
+}
+.js-accordion .toggle img,
+.js-accordion-tab .toggle img {
+  margin-left: 5px;
+}
+[class*="tit-cmn"] + section > [class*="tit-cmn"]:first-child,
+[class*="tit-cmn"] + section > [class*="list-cmn"]:first-child,
+[class*="tit-cmn"] + form > section > [class*="tit-cmn"]:first-child,
+[class*="tit-cmn"] + form > section > [class*="list-cmn"]:first-child {
+  margin-top: 30px;
+}
+[class*="tit-cmn"] + section.box-cmn-topics > [class*="tit-cmn"]:first-child,
+[class*="tit-cmn"] + section.box-cmn > [class*="tit-cmn"]:first-child {
+  margin-top: 0;
+}
+.list-accordion > li:not(:first-child) .js-accordion .tit-cmn-lv3,
+.list-accordion > li:not(:first-child) .js-accordion-tab .tit-cmn-lv3,
+.list-accordion > li:not(:first-child) .js-accordion .tit-cmn-lv4,
+.list-accordion > li:not(:first-child) .js-accordion-tab .tit-cmn-lv4 {
+  margin-top: 10px;
+}
+.list-accordion + .list-accordion {
+  margin-top: 20px;
+}
+.js-accordion + .js-accordion-body,
+.js-accordion-tab + .js-accordion-body {
+  padding-bottom: 15px;
+}

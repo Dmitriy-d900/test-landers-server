@@ -1,0 +1,66 @@
+.article-img img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  box-sizing: border-box;
+  padding: 3px 10px 3px 10px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 9999px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.btn i {
+  position: relative;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: transparent 0 0 no-repeat;
+}
+
+.btn .label {
+  margin-left: 3px;
+  white-space: nowrap;
+  color: #fff;
+  font-weight: 500;
+}
+
+.shareEl .btn.small {
+  margin-right: 1px;
+}
+
+.btnWrap .btn {
+  background-color: #00b900;
+  border-radius: 3px;
+}
+
+.article-content ul {
+  padding-left: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px
+}
+
+.link {
+  color: #093475;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img,
+.clickable {
+  cursor: pointer;
+}

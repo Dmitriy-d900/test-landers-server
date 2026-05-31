@@ -1,0 +1,420 @@
+@charset "UTF-8";
+.footer input,
+.footer textarea {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+}
+.footer label {
+  cursor: pointer;
+}
+.footer table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 100%;
+}
+.footer fieldset,
+.footer img {
+  border: 0;
+}
+.footer img {
+  vertical-align: top;
+}
+.footer address,
+.footer caption,
+.footer cite,
+.footer code,
+.footer dfn,
+.footer em,
+.footer th,
+.footer var {
+  font-style: normal;
+  font-weight: normal;
+}
+.footer ol,
+.footer ul {
+  list-style: none;
+}
+.footer caption,
+.footer th {
+  text-align: left;
+}
+.footer h1,
+.footer h2,
+.footer h3,
+.footer h4,
+.footer h5,
+.footer h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+.footer q:after,
+.footer q:before {
+  content: "";
+}
+.footer abbr,
+.footer acronym {
+  border: 0;
+}
+.footer * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.footer a:focus,
+.footer input:focus {
+  outline: 1px dotted #000;
+}
+html {
+  font-size: 62.5%;
+}
+.footer {
+  overflow-x: hidden;
+  width: 100%;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ",
+    Meiryo, sans-serif;
+  font-size: 100%;
+  text-align: center;
+  word-break: break-all;
+}
+.footer-top {
+  padding-top: 20px;
+  background-color: #eee;
+}
+.footer-bottom {
+  padding: 30px 0 40px;
+  background-color: #d6d6d6;
+}
+.footer a {
+  color: #093475;
+  text-decoration: none;
+}
+.pc .footer a:hover,
+.pc .footer a:focus {
+  color: #3743d7;
+}
+.footer-search {
+  padding: 0 10px;
+}
+.footer-search .form {
+  position: relative;
+  width: 100%;
+  height: 28px;
+}
+.footer-search .osp_searchBox {
+  padding: 5px 45px 5px 5px;
+  width: 100%;
+  height: 28px;
+  border: 1px solid #ddd;
+  line-height: 21px;
+}
+.footer-search .osp_searchBox::-webkit-input-placeholder {
+  color: #666;
+}
+.footer-search .osp_searchBox:-moz-placeholder {
+  color: #666;
+  opacity: 1;
+}
+.footer-search .osp_searchBox::-moz-placeholder {
+  color: #666;
+  opacity: 1;
+}
+.footer-search .osp_searchBox:-ms-input-placeholder {
+  color: #666;
+}
+.footer-search .submit {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 28px;
+  height: 28px;
+}
+.footer-search .submit img {
+  width: 100%;
+  height: auto;
+}
+.footer-sitemap {
+  margin: 20px -1px 0 0;
+  border-top: 1px solid #d6d6d6;
+  text-align: left;
+}
+.footer-sitemap:before {
+  content: "";
+  display: table;
+}
+.footer-sitemap:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.footer-sitemap .col {
+  float: left;
+  width: 50%;
+  border-bottom: 1px solid #d6d6d6;
+  border-right: 1px solid #d6d6d6;
+}
+.footer-sitemap .col > .s-mt-30_ft {
+  margin-top: 0;
+  border-top: 1px solid #d6d6d6;
+}
+.footer-sitemap .col-smt {
+  float: left;
+  width: 50%;
+  border-bottom: 1px solid #d6d6d6;
+  border-right: 1px solid #d6d6d6;
+}
+.footer-sitemap .col-smt > .s-mt-30_ft {
+  margin-top: 0;
+  border-top: 1px solid #d6d6d6;
+}
+.footer-sitemap .row:nth-child(odd):last-child .col:nth-child(odd):last-child,
+.footer-sitemap
+  .row:nth-child(even):last-child
+  .col:nth-child(even):last-child {
+  position: relative;
+  border-bottom: 0;
+}
+.footer-sitemap
+  .row:nth-child(odd):last-child
+  .col:nth-child(odd):last-child:after,
+.footer-sitemap
+  .row:nth-child(even):last-child
+  .col:nth-child(even):last-child:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: -1px;
+  height: 100%;
+  border-left: 1px solid #d6d6d6;
+}
+.footer-sitemap .tit > a {
+  display: table;
+  width: 100%;
+  height: 36px;
+}
+.footer-sitemap .tit .txt {
+  position: relative;
+  display: table-cell;
+  padding: 10px 23px 10px 11px;
+  vertical-align: middle;
+  font-size: 78.57143%;
+  width: 100%;
+}
+.footer-sitemap .tit .txt:before {
+  position: absolute;
+  display: inline-block;
+  content: "";
+  width: 5px;
+  height: 8px;
+  top: 0;
+  bottom: 0;
+  right: 11px;
+  margin: auto;
+  background: url(/landers/2333/[3481]immediate_neon_ntt_jp/images_osp/common/ico/ico_heading_arrow.png) no-repeat;
+  background-size: 5px 8px;
+}
+.footer-sitemap .tit.ico-window .txt:before {
+  width: 8px;
+  height: 8px;
+  background: url(/landers/2333/[3481]immediate_neon_ntt_jp/images_osp/common/ico/ico_window01.png) no-repeat left
+    top;
+  background-size: 8px 8px;
+}
+.footer-sitemap .list-link {
+  display: none;
+}
+.footer-sitemap .tit {
+  position: relative;
+}
+.footer-sitemap .tit.no-icon_smt .txt:before {
+  content: none;
+  width: 0;
+  height: 0;
+  margin-right: 0;
+  background: 0;
+}
+.footer-sitemap .tit.no-icon_smt .ico-window {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 11px;
+  margin: auto;
+  width: 8px;
+  height: 8px;
+}
+.footer-btns {
+  margin-top: -10px;
+  padding: 0 10px;
+  font-size: 85.71%;
+}
+.footer-btns:before {
+  content: "";
+  display: table;
+}
+.footer-btns:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.footer-btns .btn {
+  float: left;
+  margin-top: 10px;
+  width: 50%;
+}
+.footer-btns .btn:first-child {
+  margin-left: 0;
+}
+.footer-btns .btn:nth-child(odd) {
+  padding-right: 5px;
+}
+.footer-btns .btn:nth-child(even) {
+  padding-left: 5px;
+}
+.footer-btns .btn > a {
+  display: table;
+  width: 100%;
+  height: 36px;
+}
+.pc .footer-btns .btn > a:hover,
+.footer-btns .btn > a:focus {
+  color: #3374da;
+  text-decoration: none;
+}
+.footer-btns .btn .txt {
+  display: table-cell;
+  padding-top: 2px;
+  vertical-align: middle;
+  background-color: #f6f6f6;
+}
+.footer-btns .btn .txt:after {
+  display: inline-block;
+  content: "";
+  margin-left: 6px;
+  width: 5px;
+  height: 8px;
+  background: url(/landers/2333/[3481]immediate_neon_ntt_jp/images_osp/common/ico/ico_heading_arrow.png) no-repeat
+    right;
+  background-size: 5px 8px;
+}
+.footer-links {
+  margin: 30px 0 0 -1px;
+  text-align: left;
+  border-top: 1px solid #aaa;
+}
+.footer-links:before {
+  content: "";
+  display: table;
+}
+.footer-links:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.footer-links .link {
+  float: left;
+  width: 50%;
+  border-bottom: 1px solid #aaa;
+  border-left: 1px solid #aaa;
+}
+.footer-links .link > a {
+  display: table;
+  width: 100%;
+  height: 36px;
+}
+.footer-links .link .txt {
+  position: relative;
+  display: block;
+  padding: 10px 23px 10px 11px;
+  vertical-align: middle;
+  font-size: 78.57143%;
+}
+.footer-links .link .txt:before {
+  position: absolute;
+  display: inline-block;
+  content: "";
+  margin-right: 6px;
+  width: 5px;
+  height: 8px;
+  top: 0;
+  bottom: 0;
+  right: 11px;
+  margin: auto;
+  background: url(/landers/2333/[3481]immediate_neon_ntt_jp/images_osp/common/ico/ico_heading_arrow.png) no-repeat;
+  background-size: 5px 8px;
+}
+.footer-links .link.ico-window .txt:before {
+  width: 8px;
+  height: 8px;
+  background: url(/landers/2333/[3481]immediate_neon_ntt_jp/images_osp/common/ico/ico_window01.png) no-repeat left
+    top;
+  background-size: 8px 8px;
+}
+.footer-links .link.no-icon {
+  position: relative;
+}
+.footer-links .link.no-icon .txt:before {
+  content: none;
+  width: 0;
+  height: 0;
+  margin-right: 0;
+  background: 0;
+}
+.footer-links .link.no-icon .ico-window {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 11px;
+  margin: auto;
+  width: 8px;
+  height: 8px;
+}
+.mod-switch-btn {
+  display: none;
+  margin: 40px auto 0;
+  width: 240px;
+}
+.mod-switch-btn.show {
+  display: block;
+}
+.mod-switch-btn:before {
+  content: "";
+  display: table;
+}
+.mod-switch-btn:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.mod-switch-btn .btn {
+  float: left;
+  width: 120px;
+  height: 38px;
+  overflow: hidden;
+}
+.mod-switch-btn a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.mod-switch-btn img {
+  width: 100%;
+  height: auto;
+}
+.mod-switch-btn .is-active img {
+  margin-top: -38px;
+}
+.copyright {
+  display: table;
+  width: 100%;
+  margin-top: 40px;
+  font-size: 71.42857%;
+  color: #333;
+}
+.copyright > li {
+  display: table-row-group;
+  text-align: center;
+  line-height: 2;
+}
+.copyright > li:first-child {
+  display: table-footer-group;
+}
