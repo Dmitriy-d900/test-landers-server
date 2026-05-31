@@ -60,99 +60,95 @@ for TEAM_FOLDER in "${FOLDERS[@]}"; do
 
     echo "Processing directory: $TEAM_FOLDER"
 
-    if [ -d "." ]; then
-        if [ -d "assets" ]; then
-            mv "assets" "assets_main"
-            echo "Renamed assets to assets_main in $TEAM_FOLDER"
-        fi
+    if [ -d "assets" ]; then
+        mv "assets" "assets_main"
+        echo "Renamed assets to assets_main in $TEAM_FOLDER"
+    fi
 
-        # ==========================
-        # ✅ PATH REWRITE BLOCK
-        # ==========================
-        if [ "$USE_FUNNELS" = true ]; then
-            echo "🔧 Funnels mode: меняю /funnels/... на относительные"
-
-            # 1) /funnels/<число>/<папка>/ -> ./
-            # Работает при любых символах в имени папки ([], ., и т.д.)
-            find . -type f \( -name "*.php" -o -name "*.html" -o -name "*.js" -o -name "*.css" \) \
-                -exec perl -pi -e 's#\/funnels\/\d+\/[^\/]+\/#./#g' {} +
-
-            # 2) На случай если где-то без финального слеша после папки:
-            # /funnels/<число>/<папка> -> ./
-            find . -type f \( -name "*.php" -o -name "*.html" -o -name "*.js" -o -name "*.css" \) \
-                -exec perl -pi -e 's#\/funnels\/\d+\/[^\/]+#./#g' {} +
-
-            # 3) ./assets/ -> ./assets_main/
-            find . -type f \( -name "*.php" -o -name "*.html" -o -name "*.js" -o -name "*.css" \) \
-                -exec perl -pi -e 's#\./assets/#./assets_main/#g' {} +
-
-        else
-            echo "🔧 Landers mode: старые замены /landers/..."
-
-            find . -type f \( -name "*.php" -o -name "*.html" -o -name "*.js" -o -name "*.css" \) \
-                -exec sed -i 's|/landers/[0-9]\+/[^/]+/|./|g' {} +
-            find . -type f \( -name "*.php" -o -name "*.html" -o -name "*.js" -o -name "*.css" \) \
-                -exec sed -i 's|./assets/|./assets_main/|g' {} +
-            find . -type f \( -name "*.php" -o -name "*.html" -o -name "*.js" -o -name "*.css" \) \
-                -exec sed -i 's|/landers/[0-9]\+/[^/]\+/|./|g' {} +
-        fi
-
-        echo "Checking for remaining landers/funnels paths:"
-        if [ "$USE_FUNNELS" = true ]; then
-            grep -Eo '/funnels/[0-9]+/[^/]+/assets' . -r --include=\*.{php,html,js,css}
-        else
-            grep -Eo '/landers/[0-9]+/[^/]+/assets' . -r --include=\*.{php,html,js,css}
-        fi
-
-        if [ -d "assets_main/css" ]; then
-            find assets_main/css/ -type f -name "*.css" -exec sed -i 's|./assets_main/fonts|../fonts|g' {} +
-            echo "Updated font paths in CSS files in $TEAM_FOLDER/assets_main/css/"
-        fi
+    if [ "$USE_FUNNELS" = true ]; then
+        echo "🔧 Funnels mode: меняю /funnels/... на относительные"
+        find . -type f \( -name "*.php" -o -name "*.html" -o -name "*.js" -o -name "*.css" \) \
+            -exec perl -pi -e 's#\/funnels\/\d+\/[^\/]+\/#./#g' {} +
+        find . -type f \( -name "*.php" -o -name "*.html" -o -name "*.js" -o -name "*.css" \) \
+            -exec perl -pi -e 's#\/funnels\/\d+\/[^\/]+#./#g' {} +
+        find . -type f \( -name "*.php" -o -name "*.html" -o -name "*.js" -o -name "*.css" \) \
+            -exec perl -pi -e 's#\./assets/#./assets_main/#g' {} +
+    else
+        echo "🔧 Landers mode: старые замены /landers/..."
+        find . -type f \( -name "*.php" -o -name "*.html" -o -name "*.js" -o -name "*.css" \) \
+            -exec sed -i 's|/landers/[^/]\+/[^/]\+/|./|g' {} +
 
         find . -type f \( -name "*.php" -o -name "*.html" -o -name "*.js" -o -name "*.css" \) \
-            -exec sed -i '/<?php require "\/var\/www\/html\/sdk\/redirect-campaigns.php" ?>/d' {} +
+            -exec sed -i 's|./assets/|./assets_main/|g' {} +
 
-        find . -type f \( -name "*.php" -o -name "*.html" \) \
-            -exec sed -i "s|<?php require \"/var/www/html/sdk/index.php\" ?>|<?php require rtrim(\$_ENV['WORKDIR_PATH'], '/') . '/' . rtrim(\$_ENV['DOMAIN'], '/') . '/' . rtrim(\$_ENV['REPOSITORY_TARGET'], '/') . '/sdk/index.php'; ?>|g" {} +
+    fi
 
-        echo "Removed line '<?php require \"/var/www/html/sdk/redirect-campaigns.php\" ?>' from files in $TEAM_FOLDER"
+    echo "Checking for remaining landers/funnels paths:"
+    if [ "$USE_FUNNELS" = true ]; then
+        grep -Eo '/funnels/[0-9]+/[^/]+/assets' . -r --include=\*.{php,html,js,css}
+    else
+        grep -Eo '/landers/[0-9]+/[^/]+/assets' . -r --include=\*.{php,html,js,css}
+    fi
 
-        find . -type f -name "index.php" \
-            -exec sed -i 's|<?php require "/var/www/html/sdk/index.php"?>|<?php require rtrim($_ENV["WORKDIR_PATH"], "/") . "/" . rtrim($_ENV["DOMAIN"], "/") . "/" . rtrim($_ENV["REPOSITORY_TARGET"], "/") . "/sdk/index.php"; ?>|g' {} +
+    if [ -d "assets_main/css" ]; then
+    find assets_main/css/ -type f -name "*.css" \
+        -exec sed -i 's|./assets_main/fonts|../fonts|g' {} +
 
-        echo "Replaced require '/var/www/html/sdk/index.php' in index.php files in $TEAM_FOLDER"
+    find assets_main/css/ -type f -name "*.css" \
+        -exec sed -i 's|url(\./assets_main/|url(/assets_main/|g' {} +
 
-        find . -type f -name "index.php" \
-            -exec sed -i 's|<?php require "/var/www/html/sdk/sdk-nophp.php" ?>|<?php require rtrim($_ENV["WORKDIR_PATH"], "/") . "/" . rtrim($_ENV["DOMAIN"], "/") . "/" . rtrim($_ENV["REPOSITORY_TARGET"], "/") . "/sdk/sdk-nophp.php"; ?>|g' {} +
+    find assets_main/css/ -type f -name "*.css" \
+        -exec sed -i 's|url("\./assets_main/|url("/assets_main/|g' {} +
 
-        echo "Replaced require '/var/www/html/sdk/sdk-nophp.php' in index.php files in $TEAM_FOLDER"
+    find assets_main/css/ -type f -name "*.css" \
+        -exec sed -i "s|url('\./assets_main/|url('/assets_main/|g" {} +
 
-        # ====== PRELEND (-p) как было ======
-        if [ "$USE_PRELEND" = true ]; then
-            echo "🧩 USE_PRELEND включён: добавляю voluum-строки перед закрывающим head/header"
+    echo "Updated asset paths in CSS files in $TEAM_FOLDER/assets_main/css/"
+    fi
 
-            PRELEND_LINE1="<?php \$voluumSettings = ['domain' => 'priallysearly.com']; ?>"
-            PRELEND_LINE2="<?php require rtrim(\$_ENV['WORKDIR_PATH'], '/') . '/' . rtrim(\$_ENV['DOMAIN'], '/') . '/' . rtrim(\$_ENV['REPOSITORY_TARGET'], '/') . '/sdk/1step-voluum.php'; ?>"
+    find . -type f \( -name "*.php" -o -name "*.html" -o -name "*.js" -o -name "*.css" \) \
+        -exec sed -i '/<?php require "\/var\/www\/html\/sdk\/redirect-campaigns.php" ?>/d' {} +
 
-            find . -type f \( -name "*.php" -o -name "*.html" \) -print0 | while IFS= read -r -d '' file; do
-                if grep -q "</head>" "$file"; then
-                    sed -i "/<\/head>/i\\
+    find . -type f \( -name "*.php" -o -name "*.html" \) \
+        -exec sed -i "s|<?php require \"/var/www/html/sdk/index.php\" ?>|<?php require rtrim(\$_ENV['WORKDIR_PATH'], '/') . '/' . rtrim(\$_ENV['DOMAIN'], '/') . '/' . rtrim(\$_ENV['REPOSITORY_TARGET'], '/') . '/sdk/index.php'; ?>|g" {} +
+
+    find . -type f -name "index.php" \
+        -exec sed -i 's|<?php require "/var/www/html/sdk/index.php"?>|<?php require rtrim($_ENV["WORKDIR_PATH"], "/") . "/" . rtrim($_ENV["DOMAIN"], "/") . "/" . rtrim($_ENV["REPOSITORY_TARGET"], "/") . "/sdk/index.php"; ?>|g' {} +
+
+    find . -type f -name "index.php" \
+        -exec sed -i 's|<?php require "/var/www/html/sdk/index.php"; ?>|<?php require rtrim($_ENV["WORKDIR_PATH"], "/") . "/" . rtrim($_ENV["DOMAIN"], "/") . "/" . rtrim($_ENV["REPOSITORY_TARGET"], "/") . "/sdk/index.php"; ?>|g' {} +
+
+    find . -type f -name "index.php" \
+        -exec sed -i 's|<?php require "/var/www/html/sdk/sdk-nophp.php" ?>|<?php require rtrim($_ENV["WORKDIR_PATH"], "/") . "/" . rtrim($_ENV["DOMAIN"], "/") . "/" . rtrim($_ENV["REPOSITORY_TARGET"], "/") . "/sdk/sdk-nophp.php"; ?>|g' {} +
+    find . -type f \( -name "*.php" -o -name "*.html" \) \
+        -exec sed -i "s|<?php require \"/var/www/html/sdk/sdk.php\" ?>|<?php require rtrim(\$_ENV['WORKDIR_PATH'], '/') . '/' . rtrim(\$_ENV['DOMAIN'], '/') . '/' . rtrim(\$_ENV['REPOSITORY_TARGET'], '/') . '/sdk/index.php'; ?>|g" {} +
+
+    find . -type f -name "index.php" \
+        -exec sed -i 's|<?php require "/var/www/html/sdk/sdk.php"?>|<?php require rtrim($_ENV["WORKDIR_PATH"], "/") . "/" . rtrim($_ENV["DOMAIN"], "/") . "/" . rtrim($_ENV["REPOSITORY_TARGET"], "/") . "/sdk/index.php"; ?>|g' {} +
+
+    if [ "$USE_PRELEND" = true ]; then
+        echo "🧩 USE_PRELEND включён"
+        PRELEND_LINE1="<?php \$voluumSettings = ['domain' => 'priallysearly.com']; ?>"
+        PRELEND_LINE2="<?php require rtrim(\$_ENV['WORKDIR_PATH'], '/') . '/' . rtrim(\$_ENV['DOMAIN'], '/') . '/' . rtrim(\$_ENV['REPOSITORY_TARGET'], '/') . '/sdk/1step-voluum.php'; ?>"
+
+        find . -type f \( -name "*.php" -o -name "*.html" \) -print0 | while IFS= read -r -d '' file; do
+            if grep -q "</head>" "$file" && ! grep -q "\$voluumSettings" "$file"; then
+                sed -i "/<\/head>/i\\
 $PRELEND_LINE1\\
 $PRELEND_LINE2" "$file"
-                    echo "  ✅ Вставлено в $file перед </head>"
-                elif grep -q "</header>" "$file"; then
-                    sed -i "/<\/header>/i\\
+                echo "  ✅ Вставлено в $file перед </head>"
+            elif grep -q "</header>" "$file" && ! grep -q "\$voluumSettings" "$file"; then
+                sed -i "/<\/header>/i\\
 $PRELEND_LINE1\\
 $PRELEND_LINE2" "$file"
-                    echo "  ✅ Вставлено в $file перед </header>"
-                fi
-            done
-        fi
+                echo "  ✅ Вставлено в $file перед </header>"
+            fi
+        done
+    fi
 
-        if [ "$USE_FUNNELS" = true ]; then
-            echo "🧩 USE_FUNNELS включён: добавляю delegate-ch + dtpcnt блок перед закрывающим head/header"
-
-            read -r -d '' FUNNEL_SNIPPET <<'EOF'
+    if [ "$USE_FUNNELS" = true ]; then
+        echo "🧩 USE_FUNNELS включён"
+        read -r -d '' FUNNEL_SNIPPET <<'EOF'
 <meta http-equiv="delegate-ch" content="sec-ch-ua https://<?=$voluumSettings['domain'] ?? 'priallysearly.com'?>; sec-ch-ua-mobile https://<?=$voluumSettings['domain'] ?? 'priallysearly.com'?>; sec-ch-ua-arch https://<?=$voluumSettings['domain'] ?? 'priallysearly.com'?>; sec-ch-ua-model https://<?=$voluumSettings['domain'] ?? 'priallysearly.com'?>; sec-ch-ua-platform https://<?=$voluumSettings['domain'] ?? 'priallysearly.com'?>; sec-ch-ua-platform-version https://<?=$voluumSettings['domain'] ?? 'priallysearly.com'?>; sec-ch-ua-bitness https://<?=$voluumSettings['domain'] ?? 'priallysearly.com'?>; sec-ch-ua-full-version-list https://<?=$voluumSettings['domain'] ?? 'priallysearly.com'?>; sec-ch-ua-full-version https://<?=$voluumSettings['domain'] ?? 'priallysearly.com'?>"><style>.dtpcnt{opacity: 0;}</style>
 <script>
  (function(c,d,f,h,t,b,n,u,k,l,m,e,p,v,q){function r(a){var c=d.cookie.match(new RegExp("(^| )"+a+"=([^;]+)"));return c?c.pop():f.getItem(a+"-expires")&&+f.getItem(a+"-expires")>(new Date).getTime()?f.getItem(a):null}q="https:"===c.location.protocol?"secure; ":"";c[b]||(c[b]=function(a){c[b].state.callbackQueue.push(a)},c[b].state={callbackQueue:[]},c[b].registerConversion=function(a){c[b].state.callbackQueue.push(a)},function(){(m=/[?&]cpid(=([^&#]*)|&|#|$)/.exec(c.location.href))&&m[2]&&(e=m[2],
@@ -162,66 +158,58 @@ $PRELEND_LINE2" "$file"
 <noscript><link href="https://<?=$voluumSettings['domain'] ?? 'priallysearly.com'?>/d/.js?noscript=true&ourl=" rel="stylesheet"/></noscript>
 EOF
 
-            export FUNNEL_SNIPPET
+        export FUNNEL_SNIPPET
 
-            find . -type f \( -name "*.php" -o -name "*.html" \) -print0 | while IFS= read -r -d '' file; do
-                if grep -q "</head>" "$file"; then
-                    perl -0777 -i -pe 's@</head>@$ENV{FUNNEL_SNIPPET}."\n</head>"@ie' "$file"
-                    echo "  ✅ Вставлено в $file перед </head>"
-                elif grep -q "</header>" "$file"; then
-                    perl -0777 -i -pe 's@</header>@$ENV{FUNNEL_SNIPPET}."\n</header>"@ie' "$file"
-                    echo "  ✅ Вставлено в $file перед </header>"
-                fi
-            done
-        fi
-
-        if [ ! -d .git ]; then
-            git init
-        fi
-
-        if ! git remote | grep -q origin; then
-            git remote add origin "$NEW_REPO_URL"
-        fi
-
-        git lfs install
-        git lfs track "*.jpg"
-        git lfs track "*.png"
-        git lfs track "*.webp"
-        git lfs track "*.svg"
-
-        echo "*.jpg filter=lfs diff=lfs merge=lfs -text" >> .gitattributes
-        echo "*.png filter=lfs diff=lfs merge=lfs -text" >> .gitattributes
-        echo "*.webp filter=lfs diff=lfs merge=lfs -text" >> .gitattributes
-        echo "*.svg filter=lfs diff=lfs merge=lfs -text" >> .gitattributes
-
-        git add .gitattributes
-
-        SAFE_BRANCH_NAME=$(echo "$YEAR/$TEAM_FOLDER" | sed 's/\[/_/g; s/\]/_/g')
-
-        if git ls-remote --exit-code --heads origin "$SAFE_BRANCH_NAME"; then
-            git push origin --delete "$SAFE_BRANCH_NAME"
-        fi
-
-        if git show-ref --verify --quiet "refs/heads/$SAFE_BRANCH_NAME"; then
-            git checkout "$SAFE_BRANCH_NAME"
-        else
-            git checkout --orphan "$SAFE_BRANCH_NAME"
-        fi
-
-        git add .
-        git commit -m "Added files from $TEAM_FOLDER"
-        git push -u origin "$SAFE_BRANCH_NAME"
-
-        echo "Push successful, directory $TEAM_FOLDER processed."
-
-        cd "$DEST_DIR" || { echo "Failed to change directory to $DEST_DIR."; exit 1; }
-        rm -rf "$TEAM_FOLDER"
-        echo "Removed directory $TEAM_FOLDER from $DEST_DIR."
-
-        cd "$SOURCE_DIR" || { echo "Failed to return to the original directory."; exit 1; }
-    else
-        echo "Directory $TEAM_FOLDER not found in $YEAR."
+        find . -type f \( -name "*.php" -o -name "*.html" \) -print0 | while IFS= read -r -d '' file; do
+            if grep -q "</head>" "$file" && ! grep -q "dtpcnt" "$file"; then
+                perl -0777 -i -pe 's@</head>@$ENV{FUNNEL_SNIPPET}."\n</head>"@ie' "$file"
+                echo "  ✅ Вставлено в $file перед </head>"
+            elif grep -q "</header>" "$file" && ! grep -q "dtpcnt" "$file"; then
+                perl -0777 -i -pe 's@</header>@$ENV{FUNNEL_SNIPPET}."\n</header>"@ie' "$file"
+                echo "  ✅ Вставлено в $file перед </header>"
+            fi
+        done
     fi
+
+    if [ ! -d .git ]; then
+        git init
+    fi
+
+    if ! git remote | grep -q origin; then
+        git remote add origin "$NEW_REPO_URL"
+    fi
+
+    git lfs install
+    git lfs track "*.jpg" "*.png" "*.webp" "*.svg"
+
+    echo "*.jpg filter=lfs diff=lfs merge=lfs -text" >> .gitattributes
+    echo "*.png filter=lfs diff=lfs merge=lfs -text" >> .gitattributes
+    echo "*.webp filter=lfs diff=lfs merge=lfs -text" >> .gitattributes
+    echo "*.svg filter=lfs diff=lfs merge=lfs -text" >> .gitattributes
+
+    git add .gitattributes
+
+    SAFE_BRANCH_NAME=$(echo "$YEAR/$TEAM_FOLDER" | sed 's/\[/_/g; s/\]/_/g')
+
+    if git ls-remote --exit-code --heads origin "$SAFE_BRANCH_NAME"; then
+        git push origin --delete "$SAFE_BRANCH_NAME"
+    fi
+
+    if git show-ref --verify --quiet "refs/heads/$SAFE_BRANCH_NAME"; then
+        git checkout "$SAFE_BRANCH_NAME"
+    else
+        git checkout --orphan "$SAFE_BRANCH_NAME"
+    fi
+
+    git add .
+    git commit -m "Added files from $TEAM_FOLDER"
+    git push -u origin "$SAFE_BRANCH_NAME"
+
+    echo "Push successful, directory $TEAM_FOLDER processed."
+
+    cd "$DEST_DIR" || exit 1
+    rm -rf "$TEAM_FOLDER"
+    cd "$SOURCE_DIR" || exit 1
 done
 
 echo "All directories processed."
