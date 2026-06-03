@@ -1,8 +1,3 @@
-<?php
-$offer='ai_trader_x';
-$offerName='AI Trader X';
-?>
-
 <!DOCTYPE html>
 <html lang="de" class="has-facts-container mod modPage hydrated has-sdx-header">
 
