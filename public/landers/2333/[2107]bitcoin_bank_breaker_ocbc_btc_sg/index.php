@@ -1,6 +1,6 @@
 <?php
-$offer='ai_trader_x';
-$offerName='AI Trader X';
+$offer='azaliumbit';
+$offerName='azaliumbit';
 ?>
 
 <!DOCTYPE html>
