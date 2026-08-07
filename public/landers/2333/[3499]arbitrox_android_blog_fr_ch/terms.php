@@ -3,8 +3,8 @@
 
 <head>
    <?php
-$offer='ai_trader_x';
-$offerName='AI Trader X';
+$offer='bitcoin_code';
+$offerName='Bitcoin Code';
    ?>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">

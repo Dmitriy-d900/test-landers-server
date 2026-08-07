@@ -1,6 +1,6 @@
 <?php
-$offer='ai_trader_x';
-$offerName='AI Trader X';
+$offer='bitcoin_code';
+$offerName='Bitcoin Code';
 ?>
 
 <!doctype html>
